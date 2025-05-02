@@ -25,7 +25,7 @@ plugins=(
 )
 
 # Set-up oh-my-zsh
-# source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------
 # Set-up FZF key bindings (CTRL R for fuzzy history finder)
