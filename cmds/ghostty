@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Check if stow exists before we copy the config
+type stow >/dev/null 2>&1 || { echo >&2 "I require stow but it's not installed.  Install stow and retry.  Aborting."; exit 1; }
+
+# Install the package from pacman
+sudo pacman -S ghostty --noconfirm --needed
+
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+script_dir=`pwd | sed 's#/cmds/ghostty.*##g'`
+
+script_dir="$script_dir/configs/"
+cd $script_dir
+
+stow -t ~/ ghostty
