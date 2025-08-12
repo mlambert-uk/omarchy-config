@@ -20,8 +20,8 @@ stow -t ~/ ohmyposh
 echo "Add to .bashrc configuration file"
 
 if grep "oh-my-posh init bash" ~/.bashrc; then
+    echo "Already exists, skipping"
+else
     echo "Updating config"
     echo 'eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/arcadezombie.omp.json)"' >> ~/.bashrc
-else
-    echo "Already exists, skipping"
 fi
