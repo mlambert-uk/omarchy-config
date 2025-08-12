@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Check if stow exists before we copy the config
+type stow >/dev/null 2>&1 || { echo >&2 "I require stow but it's not installed.  Install stow and retry.  Aborting."; exit 1; }
+
+# Stow the configuration files
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+script_dir=`pwd | sed 's#/cmds/hypr.*##g'`
+
+script_dir="$script_dir/configs/"
+cd $script_dir
+
+stow -t ~/ hypr
+
+# Add link to the new bindings to the bindings.conf file
+if grep "source=az-bindings.conf" ~/.config/hypr/bindings.conf; then
+    echo "Updating config"
+    echo "source=az-bindings.conf" >> ~/.config/hypr/bindings.conf
+else
+    echo "Already exists, skipping"
+fi
+

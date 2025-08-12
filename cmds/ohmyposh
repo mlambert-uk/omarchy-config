@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Check if stow exists before we copy the config
+type stow >/dev/null 2>&1 || { echo >&2 "I require stow but it's not installed.  Install stow and retry.  Aborting."; exit 1; }
+
+# Install the package from pacman
+curl -s https://ohmyposh.dev/install.sh | bash -s
+
+# Stow the configuration files
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
+script_dir=`pwd | sed 's#/cmds/ohmyposh.*##g'`
+
+script_dir="$script_dir/configs/"
+cd $script_dir
+
+stow -t ~/ ohmyposh
+
+# Check to see if we have the command in the .bashrc script and add it if not
+echo "Add to .bashrc configuration file"
+
+if grep "oh-my-posh init bash" ~/.bashrc; then
+    echo "Updating config"
+    echo 'eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/arcadezombie.omp.json)"' >> ~/.bashrc
+else
+    echo "Already exists, skipping"
+fi
