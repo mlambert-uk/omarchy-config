@@ -14,10 +14,10 @@ cd $script_dir
 stow -t ~/ hypr
 
 # Add link to the new bindings to the bindings.conf file
-if grep "source=az-bindings.conf" ~/.config/hypr/bindings.conf; then
-    echo "Updating config"
-    echo "source=az-bindings.conf" >> ~/.config/hypr/bindings.conf
-else
+if more ~/.config/hypr/bindings.conf | grep "source = ~/.config/hypr/az-bindings.conf"; then
     echo "Already exists, skipping"
+else
+    echo "Updating config"
+    echo "source = ~/.config/hypr/az-bindings.conf" >> ~/.config/hypr/bindings.conf
 fi
 
