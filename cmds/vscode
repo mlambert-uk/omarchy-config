@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Install Visual Studio Code on Arch Linux using yay
+# Make sure you have yay installed before running this script
+if ! command -v yay &> /dev/null; then
+    echo "yay is not installed. Please install yay first."
+    exit 1
+fi
+
+echo "Installing Visual Studio Code..."
+
+yay -S visual-studio-code-bin
+
+if [ $? -eq 0 ]; then
+    echo "Visual Studio Code has been installed successfully."
+else
+    echo "Failed to install Visual Studio Code."
+    exit 1
+fi
