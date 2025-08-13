@@ -6,11 +6,28 @@ type stow >/dev/null 2>&1 || { echo >&2 "I require stow but it's not installed. 
 # Install the package from pacman
 sudo pacman -S ghostty --noconfirm --needed
 
+# Check if the installation was successful
+if [ $? -ne 0 ]; then
+    echo "Failed to install Ghostty. Please check your package manager."
+    exit 1
+fi  
+
+# Get the directory of this script
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
+# Change to the directory where the configs are stored
 script_dir=`pwd | sed 's#/cmds/ghostty.*##g'`
-
 script_dir="$script_dir/configs/"
+
 cd $script_dir
 
 stow -t ~/ ghostty
+
+# Check if stow was successful
+if [ $? -eq 0 ]; then
+    echo "Ghostty configuration stowed successfully."
+else
+    echo "Failed to stow Ghostty configuration."
+    exit 1
+fi
+

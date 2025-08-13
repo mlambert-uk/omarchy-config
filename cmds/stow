@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 
 sudo pacman -S stow --noconfirm --needed
+
+if [ $? -ne 0 ]; then
+    echo "Error: Failed to install stow."
+    exit 1
+fi
+echo "Stow installed successfully."

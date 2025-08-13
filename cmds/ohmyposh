@@ -6,6 +6,13 @@ type stow >/dev/null 2>&1 || { echo >&2 "I require stow but it's not installed. 
 # Install the package from pacman
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
+# Check if oh-my-posh is installed
+if ! command -v oh-my-posh &> /dev/null; then
+    echo "oh-my-posh could not be installed. Please check the installation script."
+    exit 1
+fi
+
+
 # Stow the configuration files
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
@@ -16,6 +23,12 @@ cd $script_dir
 
 stow -t ~/ ohmyposh
 
+# Check if the stow command was successful
+if [ $? -ne 0 ]; then
+    echo "Stow command failed. Please check the configuration files."
+    exit 1
+fi
+
 # Check to see if we have the command in the .bashrc script and add it if not
 echo "Add to .bashrc configuration file"
 
@@ -25,3 +38,4 @@ else
     echo "Updating config"
     echo 'eval "$(oh-my-posh init bash --config ~/.config/ohmyposh/arcadezombie.omp.json)"' >> ~/.bashrc
 fi
+
