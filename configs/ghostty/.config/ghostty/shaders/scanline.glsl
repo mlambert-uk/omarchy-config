@@ -29,7 +29,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
     col += col * scanlines * opacityScanline;
     col += col * vec3(random(uv*iTime)) * opacityNoise;
-    col += col * sin(110.0*iTime) * flickering;
+ //   col += col * sin(110.0*iTime) * flickering;
 
 
     fragColor = vec4(col,1.0);
