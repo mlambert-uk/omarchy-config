@@ -13,13 +13,7 @@ yay -S --noconfirm --needed boxes-gnome
 yay -S --noconfirm --needed wttrbar
 
 # Install Web Apps
-omarchy-webapp-install "https://mail.google.com/mail/u/0/" "Gmail"
-omarchy-webapp-install "https://calendar.google.com/calendar/u/0/r" "Google Calendar"
-omarchy-webapp-install "https://www.facebook.com/messages/t/" "Facebook Messenger"
-omarchy-webapp-install "https://www.google.com/maps" "Google Maps"
+cp -R webapps/* ~/.local/share/applications/
 
-# Install AI Tools
-omarchy-webapp-install "https://copilot.github.com/" "GitHub Copilot"
-omarchy-webapp-install "https://gemini.google.com/" "Google Gemini"
 
 echo "Installation of zombie-specific applications completed."

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Github Copilot
+Comment=Github Copilot
+Exec=omarchy-launch-webapp https://copilot.github.com/
+Terminal=false
+Type=Application
+Icon=/home/mark/.local/share/applications/icons/Github Copilot.png
+StartupNotify=true

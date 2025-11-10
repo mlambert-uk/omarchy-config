@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=Facebook Messenger
+Comment=Facebook Messenger
+Exec=omarchy-launch-webapp https://www.facebook.com/messages/t/
+Terminal=false
+Type=Application
+Icon=/home/mark/.local/share/applications/icons/Facebook Messenger.png
+StartupNotify=true
