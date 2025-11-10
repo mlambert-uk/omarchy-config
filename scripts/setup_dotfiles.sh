@@ -10,7 +10,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Set up waybar configuration
-stow -d dotfiles -t $HOME/.config/waybar waybar --adopt
+stow -d dotfiles -t $HOME waybar --adopt
 if [ $? -ne 0 ]; then
     echo "Error: Failed to stow waybar configuration."
     exit 1
