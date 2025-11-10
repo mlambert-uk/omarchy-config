@@ -36,7 +36,6 @@ source ./scripts/departuremononerdfont.sh
 # Clean up unrequired packages and Omarchy things that are not wanted
 show_logo
 show_subtext "Cleaning up Omarchy default install..."
-
 source ./scripts/removeapps.sh
 
 # Fix Omarchy issues
