@@ -21,3 +21,5 @@ fi
 
 echo "Stow installed successfully."
 
+# Install fonts
+yay -S --noconfirm --needed otf-departure-mono

@@ -28,6 +28,11 @@ show_subtext "Installing essentials..."
 
 source ./scripts/essentials.sh
 
+# Install Departure Mono Nerd Font
+show_logo
+show_subtext "Installing Departure Mono Nerd Font..."
+source ./scripts/departuremononerdfont.sh
+
 # Clean up unrequired packages and Omarchy things that are not wanted
 show_logo
 show_subtext "Cleaning up Omarchy default install..."
