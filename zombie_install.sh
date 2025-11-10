@@ -48,6 +48,11 @@ show_logo
 show_subtext "Installing preferred applications..."
 source ./scripts/zombie_apps.sh
 
+# Set up dotfiles using stow
+show_logo
+show_subtext "Setting up dotfiles with stow..."
+source ./scripts/setup_dotfiles.sh
+
 # Final message
 show_logo
 show_subtext "Installation completed successfully!"

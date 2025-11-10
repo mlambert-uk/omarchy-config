@@ -1,7 +1,7 @@
 float density = 1.3;
 float opacityScanline = .3;
-float opacityNoise = .2;
-float flickering = 0.03;
+float opacityNoise = .1;
+// float flickering = 0.03;
 
 float random (vec2 st) {
     return fract(sin(dot(st.xy,

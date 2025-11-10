@@ -46,4 +46,7 @@ fi
 # Clean up temporary files
  rm -rf "$TEMP_DIR"
 
-echo "Departure Mono Nerd Font installed successfully."
+# Set font as default for terminal (example for Alacritty)
+omarchy-font-set "DepartureMono Nerd Font"
+
+echo "Departure Mono Nerd Font installed successfully.  Restart your terminal to see the changes."
