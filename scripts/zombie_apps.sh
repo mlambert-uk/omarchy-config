@@ -7,10 +7,10 @@ omarchy-install-vscode
 sudo pacman -S --noconfirm --needed firefox
 sudo pacman -S --noconfirm --needed gimp
 sudo pacman -S --noconfirm --needed bitwarden bitwarden-cli
-sudo yay -S --noconfirm --needed boxes-gnome
+yay -S --noconfirm --needed boxes-gnome
 
 # For the weather in the waybar
-sudo yay -S --noconfirm --needed wttrbar
+yay -S --noconfirm --needed wttrbar
 
 # Install Web Apps
 omarchy-webapp-install "https://mail.google.com/mail/u/0/" "Gmail"
