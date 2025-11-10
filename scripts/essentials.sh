@@ -12,6 +12,7 @@ fi
 echo "ghostty terminal installed successfully."
 
 # Install stow
+echo "Installing GNU Stow for dotfile management..."
 sudo pacman -S --noconfirm --needed stow
 
 if [ $? -ne 0 ]; then
@@ -21,5 +22,3 @@ fi
 
 echo "Stow installed successfully."
 
-# Install fonts
-yay -S --noconfirm --needed otf-departure-mono
