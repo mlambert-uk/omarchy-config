@@ -48,11 +48,12 @@ show_logo
 show_subtext "Installing preferred applications..."
 source ./scripts/zombie_apps.sh
 
-# Set up dotfiles using stow
-show_logo
-show_subtext "Setting up dotfiles with stow..."
-source ./scripts/setup_dotfiles.sh
-
 # Final message
 show_logo
 show_subtext "Installation completed successfully!"
+echo "Next steps:"
+echo "1. Reboot your system."
+echo "2. Install your dotfiles"
+echo "3. Enjoy your customized Omarchy setup!"
+
+echo -e "\nZombie installation script has finished.\n"
