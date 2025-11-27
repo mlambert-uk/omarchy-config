@@ -1,7 +1,8 @@
 #!/bin/sh
 
+# No longer needed as ghostty is the new default terminal
 # Install my preferred terminal emulator
-omarchy-install-terminal ghostty
+# omarchy-install-terminal ghostty
 
 # Check if the installation was successful
 if [ $? -ne 0 ]; then
@@ -21,4 +22,3 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Stow installed successfully."
-
