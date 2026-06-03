@@ -1,0 +1,13 @@
+# OpenCode generated/installed files
+dotfiles/opencode/node_modules/
+dotfiles/opencode/backups/
+dotfiles/opencode/bun.lock
+dotfiles/opencode/package-lock.json
+dotfiles/opencode/skills.avaylerflow-backup-*/
+
+# Hyprland backup files
+dotfiles/hypr/*.bak.*
+dotfiles/hypr/*.backup.*
+
+# OS
+.DS_Store

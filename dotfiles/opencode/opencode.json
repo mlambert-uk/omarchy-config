@@ -1,0 +1,78 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "github-copilot/claude-haiku-4.5",
+  "default_agent": "engineering-manager",
+  "permission": {
+    "external_directory": {
+      "~/Documents/mlambert_uk/**": "allow"
+    }
+  },
+  "plugin": [
+    [
+      "@plannotator/opencode@latest",
+      {
+        "workflow": "all-agents"
+      }
+    ]
+  ],
+  "formatter": {
+    "prettier": {
+      "command": ["npx", "prettier", "--write", "$FILE"],
+      "extensions": [
+        ".js",
+        ".jsx",
+        ".ts",
+        ".tsx",
+        ".json",
+        ".md",
+        ".html",
+        ".css",
+        ".yaml",
+        ".yml"
+      ]
+    }
+  },
+  "compaction": {
+    "auto": false
+  },
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
+      },
+      "timeout": 5000
+    },
+    "exa": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp",
+      "enabled": true,
+      "headers": {
+        "EXA_API_KEY": "{env:EXA_API_KEY}"
+      },
+      "timeout": 5000
+    },
+    "angular-cli": {
+      "type": "local",
+      "command": ["npx", "-y", "@angular/cli", "mcp"],
+      "enabled": false,
+      "timeout": 5000
+    },
+    "mnemonio": {
+      "type": "local",
+      "command": ["npx", "-p", "@memel06/mnemonio", "mnemonio-mcp"],
+      "enabled": false,
+      "timeout": 10000,
+      "environment": {
+        "MNEMONIO_DIR": "{env:HOME}/Documents/mlambert_uk/.mnemonio"
+      }
+    },
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "@playwright/mcp@latest"],
+      "enabled": false
+    }
+  }
+}
